@@ -127,7 +127,7 @@ if uploaded_file is not None:
             st.write("Calculated C Parameter: ", C)
             st.write("Calculated D Parameter: ", D)
             plt.plot(xlist, four_pl(xlist, *popt), 'black', label='Four Parameter Logistic Functions R2 Value=')
-            st.write("Four Parameter Logistic Function")
+            st.write("Four Parameter Logistic Function:  ((A-D)/(1.0+((x/C)**(B))) + D)")
             st.pyplot(fig)
 
     if functions == "Five Parameter Logistic Function":
@@ -159,7 +159,7 @@ if uploaded_file is not None:
             st.write("Calculated D Parameter: ", D)
             st.write("Calculated E Parameter: ", E)
             plt.plot(xlist, five_pl(xlist, *popt), 'black', label='Five Parameter Logistic Functions R2 Value=')
-            st.write("Four Parameter Logistic Function")
+            st.write("Five Parameter Logistic Function:  D + (A-D)/(np.power((1 + np.power((x/C), B)), E))")
             st.pyplot(fig)
     if functions == "Sigmoid Function":
         st.sidebar.subheader('Initial Parameters')
@@ -188,7 +188,7 @@ if uploaded_file is not None:
             st.write("Calculated C Parameter: ", C)
             st.write("Calculated D Parameter: ", D)
             plt.plot(xlist, sigmoid(xlist, *popt), 'black', label='Sigmoid Functions R2 Value=')
-            st.write("Sigmoid Function")
+            st.write("Sigmoid Function: D + (A-D)/(np.power((1 + np.power((x/C), B)), E))")
             st.pyplot(fig)
     if functions == "Power Law Function":
         st.sidebar.subheader('Initial Parameters')
@@ -213,6 +213,6 @@ if uploaded_file is not None:
             st.write("Calculated A Parameter: ", A)
             st.write("Calculated B Parameter: ", B)
             plt.plot(xlist, power_law(xlist, *popt), 'black', label='Power Law Functions R2 Value=')
-            st.write("Sigmoid Function")
+            st.write("Power Law Function: a*np.power(x, b)")
             st.pyplot(fig)
 
